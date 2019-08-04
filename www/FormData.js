@@ -26,7 +26,7 @@ http.createServer(function (request, response) {
             if (pathname == "/api/form"){
                 name = request.query.name;
                 //response.writeHead(200, {'Content-Type': 'text/plain'});
-                fs.readFile('form1.html', function (err, data) {
+                fs.readFile('../form1.html', function (err, data) {
                     if (err) {
                         return console.error(err);
                     }
@@ -36,11 +36,15 @@ http.createServer(function (request, response) {
             }
 
             if (pathname == "/api/submit"){
-                fs.readFile("1.html",function (err,data) {
+                name = request.query.name;
+                fs.readFile("../1.html",function (err,data) {
                     if (err){
                         return console.error(err);
                     }
-                    response.end(data.toString());
+                    console.log(data.toString);
+                    var data3 = data.toString().replace("name",name);
+                    console.log("name"+name);
+                    response.end(data3);
                 })
             }
 
@@ -62,7 +66,7 @@ http.createServer(function (request, response) {
                     console.log(params["name"]);
                     name = params["name"];
                     console.log(name);
-                    fs.readFile('1.html', function (err, data) {
+                    fs.readFile('../1.html', function (err, data) {
                         if (err) {
                             return console.error(err);
                         }
