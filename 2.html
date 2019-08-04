@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js"></script>
+</head>
+<body>
+<input id="name" >
+<button id="btn" type="submit">提交</button>
+
+</body>
+      <script>
+          $(document).ready(function(){
+              var name = document.getElementById("name").value;
+              $("#btn").click(function(){
+                  $.ajax({
+                      url:'http://39.106.167.235:8002/1.html',
+                      type:'post',
+                      data:{name:name},
+                      success:function(data){
+                         console.log("成功");
+                      }
+                  })
+              })
+          });
+      </script>
+</html>
