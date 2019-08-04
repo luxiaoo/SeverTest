@@ -1,0 +1,32 @@
+# For a quick start check out our HTTP Requests collection (Tools|HTTP Client|Open HTTP Requests Collection) or
+# paste cURL into the file and request will be converted to HTTP Request format.
+#
+# Following HTTP Request Live Templates are available:
+# * 'gtrp' and 'gtr' create a GET request with or without query parameters;
+# * 'ptr' and 'ptrp' create a POST request with a simple or parameter-like body;
+# * 'mptr' and 'fptr' create a POST request to submit a form with a text or file field (multipart/form-data);
+
+
+#GET http://39.106.167.235:8003/api/who?name=99
+#Accept: application/json
+
+POST http://39.106.167.235:8003/api/hellowho
+Content-Type: application/x-www-form-urlencoded
+
+name=qqq
+
+###
+
+GET http://39.106.167.235:8003/api/who?name=99
+Content-Type: application/json
+
+###
+
+GET http://39.106.167.235:8004/api/form
+Content-Type: application/json
+
+###
+
+
+
+

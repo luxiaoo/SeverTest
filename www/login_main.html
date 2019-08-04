@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登陆</title>
+    <script src="https://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js">
+//        window.onload = function () {
+//            var otxtuser = document.getElementById("user");
+//            var otxtpass = document.getElementById("pass");
+//            var obtnlogin = document.getElementById("login_btn");
+//            var obtnreg = document.getElementById("reg_btn");
+////ajax不能跨域请求
+//            obtnreg.onclick=function(){
+//                $.ajax({
+//                    url:'/user',
+//                    type:'get',
+//                    data:{act:reg,user:otxtuser.val(),pass:otxtpass.val()},
+//                    success:function(str){
+//                        var json=eval('('+str+')');//解析返回的数据
+//                        if(json.ok){
+//                            alert("注册成功"+json.msg);
+//                        }else {
+//                            alert("注册失败"+json.msg);
+//                        }
+//                    },
+//                    error:function(){
+//                        alert("通讯失败");
+//                    }
+//
+//                });
+//            }
+//            obtnlogin.onclick=function(){
+//                $.ajax({
+//                    url:'/user',
+//                    type:'get',
+//                    data:{act:log,user:otxtuser.val(),pass:otxtpass.val()},
+//                    success: function (str) {
+//                        var json=eval('('+str+')');//解析返回的数据
+//                        if(json.ok){
+//                            alert("登陆成功"+json.msg);
+//                        }else{
+//                            alert("登陆失败"+json.msg);
+//                        }
+//
+//                    }
+//                });
+//            }
+//
+//        }
+    </script>
+</head>
+
+<body>
+<script>
+    $(document).ready(function(){
+        $("#login_btn").click(function(){
+            $.ajax({
+                url:'/user',
+                type:'post',
+                data:{act:'log',user:user.value,pass:pass.value},
+                success:function(data){
+                   if(data.ok){
+                       alert("success");
+                        console.log("登陆成功");
+                        alert("登陆成功");
+                    }else{
+                       alert("fail");
+                        console.log("登陆失败");
+                        alert("登陆失败"+data.msg);
+
+                    }
+                },
+                error:function(){
+                    alert("请求失败");
+                }
+            })
+        })
+        $('#reg_btn').click(function(){
+            $.ajax({
+                url:'user',
+                type:'get',
+                data:{act:'reg',user:user.value,pass:pass.value},
+                success:function(data){
+                    if(data.ok){
+                        console.log("注册成功");
+                        alert("注册成功"+data.msg);
+                    }else {
+                        console.log("注册失败");
+                        alert("注册失败"+data.msg1);
+                    }
+                }
+            })
+        });
+    });
+</script>
+<div>
+    用户名:<input type="text" id="user"><br>
+    密码:<input type="password" id="pass"><br>
+    <input type="button" id="login_btn" value="登陆">
+    <input type="button" id="reg_btn" value="注册">
+</div>
+</body>
+</html>

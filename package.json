@@ -1,0 +1,20 @@
+{
+  "name": "mine",
+  "version": "1.0.0",
+  "description": "\"#jhj\"",
+  "main": "index1.js",
+  "scripts": {
+    "test": "node www/FormData.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ljy110/jhj.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ljy110/jhj/issues"
+  },
+  "homepage": "https://github.com/ljy110/jhj#readme"
+}
