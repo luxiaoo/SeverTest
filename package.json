@@ -4,7 +4,7 @@
   "description": "\"#jhj\"",
   "main": "index1.js",
   "scripts": {
-    "test": "node www/FormData.js",
+    "test": "cd www && node FormData.js",
     "start": "node server.js"
   },
   "repository": {

@@ -50,8 +50,11 @@ http.createServer(function (request, response) {
 
             break;
         case "POST":
+            console.log(22222);
             if (pathname == "/api/submit"){
+                console.log(1);
                 var postData = "";
+                console.log("3333");
                 // 数据块接收中
                 request.on("data", function (postDataChunk) {
                     postData += postDataChunk;
@@ -99,7 +102,7 @@ http.createServer(function (request, response) {
                     // response.write(util.inspect(params));
                     // response.end("数据提交完毕");
 
-                    response.writeHead(200, {'Content-Type': 'text/plain'});
+                    response.writeHead(200, {'Content-Type': 'text/html'});
                 });
             }
             break;
